@@ -86,7 +86,7 @@ yarn_node_modules() {
   if project_uses_yarn_workspaces; then
     echo "Enabling yarn workspaces"
     # https://github.com/yarnpkg/yarn/blob/fa0fb69a567e1c44320d6f2a5f2a8ee42bc226ea/src/util/user-home-dir.js#L8
-    echo "workspaces-experimental true" >> /usr/local/share/.yarnrc
+    export FAKEROOTKEY=""
     echo "workspaces-experimental true" >> "$HOME/.yarnrc"
   fi;
   cd "$build_dir"
